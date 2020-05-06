@@ -1,3 +1,5 @@
+import { config } from 'dotenv';
+import { ConfigLoader } from '@app/config';
 import { Application } from '@app/application';
 import { Server } from 'http';
 import request from 'supertest';
@@ -5,9 +7,12 @@ import request from 'supertest';
 describe('/', () => {
     let server: Server;
 
+    config({ path: '.env.test' });
+    const opts = ConfigLoader.load('./config/config.yml');
+
     beforeAll(() => { });
     beforeEach(async () => {
-        const app: Application = new Application();
+        const app: Application = new Application(opts);
         server = app.getInstance().server;
     });
 

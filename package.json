@@ -1,7 +1,9 @@
 {
   "scripts": {
+    "build": "tsc",
     "test": "NODE_ENV=test ./node_modules/jest/bin/jest.js --verbose --runInBand",
-    "start:dev": "concurrently --handle-input \"wait-on ./dist/index.js && nodemon\" \"tsc -w -p tsconfig.json\" "
+    "start:dev": "concurrently --handle-input \"wait-on ./dist/index.js && nodemon\" \"tsc -w -p tsconfig.json\" ",
+    "start:prod": "node -r ts-node/register -r tsconfig-paths/register ./dist/index.js"
   },
   "devDependencies": {
     "@types/ejs": "^3.0.3",

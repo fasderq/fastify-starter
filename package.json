@@ -1,0 +1,37 @@
+{
+  "scripts": {
+    "test": "NODE_ENV=test ./node_modules/jest/bin/jest.js --verbose --runInBand",
+    "start:dev": "concurrently --handle-input \"wait-on ./dist/index.js && nodemon\" \"tsc -w -p tsconfig.json\" "
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.0.3",
+    "@types/jest": "^25.2.1",
+    "@types/js-yaml": "^3.12.3",
+    "@types/node": "^13.13.5",
+    "@types/redis": "^2.8.20",
+    "@types/supertest": "^2.0.9",
+    "concurrently": "^5.2.0",
+    "dotenv": "^8.2.0",
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.3",
+    "request": "^2.88.2",
+    "supertest": "^4.0.2",
+    "ts-jest": "^25.5.0",
+    "tsconfig-paths-jest": "^0.0.1",
+    "typescript": "^3.8.3",
+    "wait-on": "^5.0.0"
+  },
+  "dependencies": {
+    "ejs": "^3.1.2",
+    "fastify": "^2.11.0",
+    "fastify-blipp": "^2.3.1",
+    "fastify-cors": "^3.0.3",
+    "fastify-plugin": "^1.6.1",
+    "fastify-swagger": "^2.5.1",
+    "http-status-codes": "^1.4.0",
+    "js-yaml": "^3.13.1",
+    "redis": "^3.0.2",
+    "ts-node": "^8.10.1",
+    "tsconfig-paths": "^3.9.0"
+  }
+}
